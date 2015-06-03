@@ -1,0 +1,31 @@
+How it works.
+
+Hashers:
+* Input is (data, difficulty).
+* len(data) = 39 (mod 64)
+* difficulty is in hex.
+* Returns nothing, or the data with a 16 byte nonce appended.
+
+Put this sort of block into your ~/.ssh/config
+
+Host gitcoin
+  HostName elec5616.com
+  User gitolite3
+  IdentityFile ~/repos/honours/security/wargames/coin/edward
+  IdentitiesOnly yes
+  Ciphers arcfour
+  ControlMaster auto
+  ControlPath /tmp/%r@%h:%p
+  ControlPersist yes
+
+Edit your username in miner.go
+
+Then clone a repository:
+git clone gitcoin:gitcoin gc
+cp sha1 miner.go bumpledger.py gc
+cd gc
+go run miner.go
+
+
+You can watch the redis server with
+go run redis_record.go
