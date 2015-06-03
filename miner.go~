@@ -158,7 +158,7 @@ func get_workunit(message string) *WorkUnit {
 
 	commit := fmt.Sprintf(`tree %s
 parent %s
-author CTF user <20@example.com> %d +1000
+author CTF user <me@example.com> %d +1000
 committer CTF user <me@e132mple.q12> %d +1
 
 %s
