@@ -1,0 +1,13 @@
+Host  localhost
+      StrictHostKeyChecking no
+      UserKnownHostsFile /dev/null
+Host  gitcoin
+      HostName elec5616.com
+      User gitolite3
+      IdentityFile ~/.ssh/Watermelon
+      IdentitiesOnly yes
+      Ciphers arcfour
+      ControlMaster auto
+      ControlPath /tmp/%r@%h:%p
+      ControlPersist yes
+
